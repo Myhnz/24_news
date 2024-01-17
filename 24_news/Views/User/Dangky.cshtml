@@ -1,0 +1,98 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đăng ký</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="~/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div style="font-family:Roboto" class="container">
+            <div class="sign-up-content">
+                <form method="POST" class="signup-form">
+                    @using(Html.BeginForm())
+                    {
+                        <a href="@Url.Action("Index", "Home")"><i  style="font-size:20px" class="fa fa-arrow-left"></i></a>
+                        <h2 style="font-family:Roboto" class="form-title">ĐĂNG KÝ TÀI KHOẢN</h2>
+
+                        <div class="form-textbox">
+                            <label for="name">Họ tên: </label>
+                            @Html.TextBox("HotenND")
+                            @ViewData["Loi1"]
+                        </div>
+
+                        <div class="form-textbox">
+                            <label for="username">Tên đăng nhập: </label>
+                            @Html.TextBox("TenDN")
+                            @ViewData["Loi2"]
+                        </div>
+
+                        <div class="form-textbox">
+                            <label for="pass">Mật khẩu: </label>
+                            @Html.Password("Matkhau")
+                            @ViewData["Loi3"]
+                        </div>
+                        <div class="form-textbox">
+                            <label for="repass">Nhập lại mật khẩu: </label>
+                            @Html.Password("Matkhaunhaplai")
+                            @ViewData["Loi4"]
+                        </div>
+                        <div class="form-textbox">
+                            <label for="phone">Điện thoại: </label>
+                            @Html.TextBox("Dienthoai")
+                            @ViewData["Loi6"]
+                        </div>
+                        <div class="form-textbox">
+                            <label for="email">Email: </label>
+                            @Html.TextBox("Email")
+                            @ViewData["Loi5"]
+                        </div>
+                        <div class="form-textbox">
+                            <label>Ngày sinh:</label> 
+                            <input type="date" name="Ngaysinh" />
+                        </div>
+                        <div style="margin-bottom: 30px;"></div>
+
+                        <div class="form-textbox">
+                            <input style="font-family:Roboto" type="submit" name="submit" id="submit" class="submit" value="Tạo tài khoản" />
+                        </div>
+                    }
+                </form>
+
+                <p class="loginhere">
+                    Đã có tài khoản? <a href="@Url.Action( "Dangnhap", "User")" class="loginhere-link">Đăng nhập</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+
+

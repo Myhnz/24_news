@@ -1,0 +1,80 @@
+﻿@using _24_news.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<_24_news.Models.TINTUC>
+
+@helper Truncate(string input, int length) 
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+@{
+    ViewBag.Title = "TinTuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TRANG QUẢN LÝ TIN TỨC</h2>
+
+<p>
+    @Html.ActionLink("Thêm tin mới", "ThemTinTuc")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TenTinTuc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ChiTiet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().AnhBia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NgayCapNhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaCD)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTinTuc)
+            </td>
+            <td>
+                @Truncate(item.ChiTiet, 100)
+            </td>
+            <td>
+                <img width="100px" src="@Url.Content("~/Images/anhBiaTinTuc/" + item.AnhBia)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayCapNhat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHUDE.TenChuDe)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "SuaTinTuc", new { id = item.MaTinTuc }) |
+                @Html.ActionLink("Chi tiết", "ChiTietTinTuc", new { id = item.MaTinTuc }) |
+                @Html.ActionLink("Xóa", "XoaTinTuc", new { id = item.MaTinTuc })
+            </td>
+        </tr>
+    }
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="page-number">
+    @Html.PagedListPager(Model, page => Url.Action("TinTuc", new { page = page}))
+</div>
+<style>
+    .page-number li {
+        display: inline;
+    }
+</style>

@@ -1,0 +1,58 @@
+﻿@model _24_news.Models.TINTUC
+
+@{
+    ViewBag.Title = "ChiTietTinTuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>THÔNG TIN CHI TIẾT TIN TỨC</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên tin tức:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTinTuc)
+        </dd>
+
+        <dt>
+            Chi tiết:
+        </dt>
+
+        <dd style="width: 600px; text-align: justify">
+            @Html.DisplayFor(model => model.ChiTiet)
+        </dd>
+
+        <dt>
+            Ảnh bìa:
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/Images/anhBiaTinTuc/" + Model.AnhBia)" width="120px" />
+        </dd>
+
+        <dt>
+            Ngày cập nhật:
+        </dt>
+
+        <dd>
+            @String.Format("{0:dd/MM/yyyy}", Model.NgayCapNhat)
+        </dd>
+
+        <dt>
+            Chủ đề:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDE.MaCD)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "SuaTinTuc", new { id = Model.MaTinTuc }) |
+    @Html.ActionLink("Trở về", "TinTuc")
+</p>

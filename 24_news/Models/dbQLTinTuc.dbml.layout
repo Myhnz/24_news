@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbQLTinTuc">
+  <DataContextMoniker Name="/dbQLTinTucDataContext" />
+  <nestedChildShapes>
+    <classShape Id="fe19bc15-d20d-4e21-b22d-ef1465d17fd3" absoluteBounds="0.625, 3.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dbQLTinTucDataContext/ADMIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56d844dd-6c35-4e1a-a08e-54d902e9da5f" absoluteBounds="0.64, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="747650b5-45b9-484c-93db-d061cdb4f2aa" absoluteBounds="3.5, 0.875, 2, 1.9631982421874998">
+      <DataClassMoniker Name="/dbQLTinTucDataContext/TINTUC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9709a97c-d1c3-4b24-ad2e-2c5f4ec6e5f1" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="177faac3-9673-4099-9eeb-2fdc9a477f8a" absoluteBounds="0.75, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/dbQLTinTucDataContext/CHUDE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03e7833e-5422-40e8-a97b-f1524bef4bb5" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ec1a317-0ace-4e6f-a3a3-6a7c1a26e0b9" absoluteBounds="6.25, 1.25, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/dbQLTinTucDataContext/DANHGIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33c4fd82-ffbe-49f4-8d74-3f8cb9790b17" absoluteBounds="6.265, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c05e36b9-27b4-4e32-be98-3039abfa77bb" absoluteBounds="3.5, 3.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dbQLTinTucDataContext/NGUOIDUNG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9ba99ab-3860-413f-853d-55c8fc7cf67b" absoluteBounds="3.515, 4.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLTinTucDataContext/CHUDE/CHUDE_TINTUC" />
+      <nodes>
+        <classShapeMoniker Id="177faac3-9673-4099-9eeb-2fdc9a477f8a" />
+        <classShapeMoniker Id="747650b5-45b9-484c-93db-d061cdb4f2aa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.94314697265625); (6.25 : 1.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLTinTucDataContext/TINTUC/TINTUC_DANHGIA" />
+      <nodes>
+        <classShapeMoniker Id="747650b5-45b9-484c-93db-d061cdb4f2aa" />
+        <classShapeMoniker Id="5ec1a317-0ace-4e6f-a3a3-6a7c1a26e0b9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.95274983723958); (7.25 : 4.95274983723958); (7.25 : 2.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLTinTucDataContext/NGUOIDUNG/NGUOIDUNG_DANHGIA" />
+      <nodes>
+        <classShapeMoniker Id="c05e36b9-27b4-4e32-be98-3039abfa77bb" />
+        <classShapeMoniker Id="5ec1a317-0ace-4e6f-a3a3-6a7c1a26e0b9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

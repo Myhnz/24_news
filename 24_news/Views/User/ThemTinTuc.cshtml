@@ -1,0 +1,67 @@
+﻿@model _24_news.Models.TINTUC
+
+
+@{
+    ViewBag.Title = "ThemTinTuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("ThemTinTuc", "User", FormMethod.Post, new { @enctype = "multipart/form-data"}))
+{
+@Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h2>Thêm Tin Mới</h2>
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        @Html.LabelFor(model => model.TenTinTuc, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenTinTuc, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenTinTuc, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ChiTiet, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <textarea name="ChiTiet">Chi tiết tin tức</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AnhBia, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="fileupload" />
+            @ViewBag.ThongBao
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NgayCapNhat, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="date" name="NgayCapNhat" />
+            @Html.ValidationMessageFor(model => model.NgayCapNhat)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MaCD, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("MaCD")
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Thêm tin" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Về Trang Chủ", "Index", "Home")
+</div>
+
+
